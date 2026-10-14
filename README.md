@@ -39,3 +39,14 @@ Run `npm test` in a Node.js environment to test part-slot compatibility, customi
 This is still an early prototype. The preview uses stylized UI shapes, not a large library of production character illustrations. The drawing pad is basic and isn't yet clipped to an individual body part. Ability rules and stats are only partially implemented in the UI. There is no claim of full device-tested Android readiness until a real device or emulator test is performed.
 
 No paid API, hosted database, login, or paid server is required for the core offline app. GitHub Actions usage is subject to GitHub's current plan limits.
+
+
+## FastTrack v4 additions
+
+- Added an Ability Showcase tab with replayable, lightweight local visual effects.
+- Expanded the power list with classic, silly, gross-out, chaos, and reality-bending abilities.
+- Added collection actions to rename and duplicate saved characters, alongside edit and delete.
+- Improved loading of older saved character records with safe defaults for missing fields.
+- Added catalog validation tests for classic and silly abilities.
+
+The showcase is an initial visual prototype, not a full combat simulator. Character-versus-character combat, articulated character animation, and backup/export remain future work.

@@ -481,6 +481,132 @@
         "torso",
         "head"
       ]
+    },
+    {
+      "id": "fart-cannon",
+      "name": "Fart Cannon",
+      "category": "gross-out",
+      "requiresAny": [],
+      "previewEffect": "gross-out"
+    },
+    {
+      "id": "itch-ray",
+      "name": "Itch Ray",
+      "category": "control",
+      "requiresAny": [],
+      "previewEffect": "control"
+    },
+    {
+      "id": "burp-shockwave",
+      "name": "Burp Shockwave",
+      "category": "offense",
+      "requiresAny": [],
+      "previewEffect": "offense"
+    },
+    {
+      "id": "infinite-hiccups",
+      "name": "Infinite Hiccups",
+      "category": "control",
+      "requiresAny": [],
+      "previewEffect": "control"
+    },
+    {
+      "id": "banana-peel-generation",
+      "name": "Banana Peel Generation",
+      "category": "environment",
+      "requiresAny": [],
+      "previewEffect": "environment"
+    },
+    {
+      "id": "duck-summoning",
+      "name": "Duck Summoning",
+      "category": "summoning",
+      "requiresAny": [],
+      "previewEffect": "summoning"
+    },
+    {
+      "id": "weaponized-confetti",
+      "name": "Weaponized Confetti",
+      "category": "control",
+      "requiresAny": [],
+      "previewEffect": "control"
+    },
+    {
+      "id": "uncontrollable-dance",
+      "name": "Uncontrollable Dance",
+      "category": "control",
+      "requiresAny": [],
+      "previewEffect": "control"
+    },
+    {
+      "id": "mild-inconvenience",
+      "name": "Mild Inconvenience",
+      "category": "chaos",
+      "requiresAny": [],
+      "previewEffect": "chaos"
+    },
+    {
+      "id": "atomic-halitosis",
+      "name": "Atomic Halitosis",
+      "category": "gross-out",
+      "requiresAny": [],
+      "previewEffect": "gross-out"
+    },
+    {
+      "id": "teleportation",
+      "name": "Teleportation",
+      "category": "movement",
+      "requiresAny": [],
+      "previewEffect": "movement"
+    },
+    {
+      "id": "time-stop",
+      "name": "Time Stop",
+      "category": "reality",
+      "requiresAny": [],
+      "previewEffect": "reality"
+    },
+    {
+      "id": "super-speed",
+      "name": "Super Speed",
+      "category": "movement",
+      "requiresAny": [],
+      "previewEffect": "movement"
+    },
+    {
+      "id": "shape-shifting",
+      "name": "Shape-Shifting",
+      "category": "transformation",
+      "requiresAny": [],
+      "previewEffect": "transformation"
+    },
+    {
+      "id": "gravity-control",
+      "name": "Gravity Control",
+      "category": "reality",
+      "requiresAny": [],
+      "previewEffect": "reality"
+    },
+    {
+      "id": "plot-armor",
+      "name": "Plot Armor",
+      "category": "reality",
+      "requiresAny": [],
+      "previewEffect": "reality"
+    },
+    {
+      "id": "cheese-manipulation",
+      "name": "Cheese Manipulation",
+      "category": "chaos",
+      "requiresAny": [],
+      "previewEffect": "chaos"
+    },
+    {
+      "id": "squeaky-footsteps",
+      "name": "Squeaky Footsteps",
+      "category": "stealth",
+      "requiresAny": [],
+      "previewEffect": "stealth"
     }
   ]
 }

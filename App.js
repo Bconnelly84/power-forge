@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from "react";
 import {
   SafeAreaView, View, Text, ScrollView, Pressable, TextInput,
-  StyleSheet, StatusBar, Alert, PanResponder
+  StyleSheet, StatusBar, Alert, PanResponder, Animated, Easing
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
@@ -109,6 +109,11 @@ export default function App() {
   const [tab, setTab] = useState("Build");
   const [activeCategory, setActiveCategory] = useState("head");
   const [loaded, setLoaded] = useState(false);
+  const [showcaseAbility, setShowcaseAbility] = useState("Energy Blast");
+  const [renameId, setRenameId] = useState(null);
+  const [renameDraft, setRenameDraft] = useState("");
+  const [effectKey, setEffectKey] = useState(0);
+  const effectProgress = React.useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     (async () => {
@@ -142,8 +147,42 @@ export default function App() {
   };
 
   const loadCharacter = (item) => {
-    setCharacter(item);
+    setCharacter({ ...DEFAULT_CHARACTER, ...item, parts: { ...DEFAULT_CHARACTER.parts, ...(item.parts || {}) }, abilities: item.abilities || [], drawing: item.drawing || [] });
     setTab("Build");
+  };
+
+  const persistCharacters = async (next) => {
+    try {
+      await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next));
+      setSaved(next);
+      return true;
+    } catch (e) {
+      Alert.alert("Couldn't save", "Your changes could not be stored. Please try again.");
+      return false;
+    }
+  };
+
+  const duplicateCharacter = async (item) => {
+    const copy = { ...item, id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`, name: `${item.name || "Character"} Copy`, createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() };
+    if (await persistCharacters([copy, ...saved])) Alert.alert("Duplicated", `Created ${copy.name}.`);
+  };
+
+  const beginRename = (item) => { setRenameId(item.id); setRenameDraft(item.name || "Unnamed Character"); };
+  const commitRename = async (item) => {
+    const name = renameDraft.trim();
+    if (!name) { Alert.alert("Name required", "Enter a name before saving."); return; }
+    const next = saved.map(x => x.id === item.id ? { ...x, name, updatedAt: new Date().toISOString() } : x);
+    if (await persistCharacters(next)) setRenameId(null);
+  };
+
+  const playShowcase = () => {
+    setEffectKey(k => k + 1);
+    effectProgress.stopAnimation();
+    effectProgress.setValue(0);
+    Animated.sequence([
+      Animated.timing(effectProgress, { toValue: 1, duration: 650, easing: Easing.out(Easing.quad), useNativeDriver: true }),
+      Animated.timing(effectProgress, { toValue: 0, duration: 900, easing: Easing.in(Easing.quad), useNativeDriver: true })
+    ]).start();
   };
 
   const newCharacter = () => {
@@ -154,7 +193,10 @@ export default function App() {
   };
 
   const currentCategory = CATEGORIES.find((x) => x.key === activeCategory) || CATEGORIES[0];
-  const abilities = ["Energy Blast", "Super Strength", "Enhanced Agility", "Flight", "Force Field", "Regeneration", "Invisibility", "Telepathy", "Elemental Control", "Gadget Master"];
+  const abilities = [
+    "Energy Blast", "Super Strength", "Enhanced Agility", "Flight", "Force Field", "Regeneration", "Invisibility", "Telepathy", "Elemental Control", "Gadget Master",
+    "Fart Cannon", "Itch Ray", "Burp Shockwave", "Infinite Hiccups", "Banana Peel Generation", "Duck Summoning", "Weaponized Confetti", "Uncontrollable Dance", "Mild Inconvenience", "Atomic Halitosis", "Teleportation", "Time Stop", "Super Speed", "Shape-Shifting", "Gravity Control", "Plot Armor"
+  ];
 
   return (
     <SafeAreaView style={styles.safe}>
@@ -168,7 +210,7 @@ export default function App() {
       </View>
 
       <View style={styles.tabs}>
-        {["Build", "Abilities", "Custom", "Collection"].map((t) => <Button key={t} label={t} active={tab === t} onPress={() => setTab(t)} small />)}
+        {["Build", "Abilities", "Showcase", "Custom", "Collection"].map((t) => <Button key={t} label={t} active={tab === t} onPress={() => setTab(t)} small />)}
       </View>
 
       <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
@@ -217,6 +259,33 @@ export default function App() {
           <Pressable onPress={saveCharacter} style={styles.saveButton}><Text style={styles.saveButtonText}>SAVE CHARACTER</Text></Pressable>
         </>}
 
+        {tab === "Showcase" && <>
+          <SectionTitle right={<Text style={styles.miniLabel}>POWER DEMO</Text>}>Ability Showcase</SectionTitle>
+          <Text style={styles.helperText}>Choose one of your character's powers—or preview any catalog power—and watch a lightweight animated demonstration. These are visual previews, not full combat simulations yet.</Text>
+          <CharacterPreview character={character} />
+          <Text style={styles.fieldLabel}>SELECT A POWER</Text>
+          <View style={styles.abilityGrid}>{abilities.map((a, i) => <Pressable key={a} onPress={() => setShowcaseAbility(a)} style={[styles.abilityTile, showcaseAbility === a && styles.abilityTileActive]}>
+            <Text style={styles.abilityGlyph}>{["✦","✊","➤","↟","⬡","✚","◌","◎","❖","⚙","☁","〰","◉","!","⌁","♟","✧","♫","…","☠","✧","◷","➤","◇","◉","★"][i]}</Text>
+            <Text style={styles.abilityName}>{a}</Text>
+            <Text style={styles.abilityState}>{showcaseAbility === a ? "SELECTED" : "PREVIEW"}</Text>
+          </Pressable>)}</View>
+          <View style={styles.showcaseStage}>
+            <Text style={styles.statTitle}>DEMONSTRATION</Text>
+            <Text style={styles.showcasePower}>{showcaseAbility}</Text>
+            <View style={styles.effectArea}>
+              <Animated.View key={effectKey} style={[styles.effectOrb, {
+                opacity: effectProgress.interpolate({ inputRange: [0, 0.2, 1], outputRange: [0.15, 1, 0] }),
+                transform: [{ scale: effectProgress.interpolate({ inputRange: [0, 1], outputRange: [0.25, 2.8] }) }, { translateY: effectProgress.interpolate({ inputRange: [0, 1], outputRange: [26, -30] }) }],
+                backgroundColor: /fart|halitosis|burp|itch|hiccup/i.test(showcaseAbility) ? "#79C85A" : /fire|elemental|energy|blast|lightning/i.test(showcaseAbility) ? "#F2B544" : "#69C9FF"
+              }]} />
+              <Text style={styles.effectGlyph}>{/fart|halitosis|burp/i.test(showcaseAbility) ? "💨" : /itch|hiccup|dance/i.test(showcaseAbility) ? "〰" : /duck/i.test(showcaseAbility) ? "🦆" : /banana/i.test(showcaseAbility) ? "🍌" : /confetti/i.test(showcaseAbility) ? "🎉" : /flight|speed|teleport/i.test(showcaseAbility) ? "💫" : /time/i.test(showcaseAbility) ? "⏳" : "⚡"}</Text>
+            </View>
+            <Text style={styles.helperText}>Press the button to replay the effect. Animation runs locally on your device.</Text>
+            <Pressable onPress={playShowcase} style={styles.saveButton}><Text style={styles.saveButtonText}>▶ USE POWER</Text></Pressable>
+            <Pressable onPress={() => { update({ abilities: character.abilities.includes(showcaseAbility) ? character.abilities : [...character.abilities, showcaseAbility] }); Alert.alert("Power equipped", `${showcaseAbility} was added to this character.`); }} style={styles.button}><Text style={styles.buttonText}>ADD POWER TO CHARACTER</Text></Pressable>
+          </View>
+        </>}
+
         {tab === "Custom" && <>
           <SectionTitle>Custom part lab</SectionTitle>
           <Text style={styles.helperText}>Start by recoloring a preset part and drawing custom marks. The next iteration will add part-specific templates, attachment limits, brush controls, and undo.</Text>
@@ -243,9 +312,17 @@ export default function App() {
           <Text style={styles.helperText}>Characters are stored on this device. No account or internet connection is required to use the collection.</Text>
           {saved.length === 0 ? <View style={styles.emptyState}><Text style={styles.emptyGlyph}>◇</Text><Text style={styles.emptyTitle}>Your forge is quiet.</Text><Text style={styles.helperText}>Build a character and tap Save Character to start your collection.</Text></View> : saved.map((item) => <View key={item.id} style={styles.savedCard}>
             <View style={[styles.savedSwatch, { backgroundColor: item.color || "#6C63FF" }]} />
-            <View style={styles.savedInfo}><Text style={styles.savedName}>{item.name || "Unnamed Character"}</Text><Text style={styles.savedMeta}>{item.alignment} · {item.abilities?.length || 0} abilities</Text></View>
-            <Button label="EDIT" small onPress={() => loadCharacter(item)} />
-            <Button label="×" small onPress={() => Alert.alert("Delete character?", `Delete ${item.name}?`, [{ text: "Cancel", style: "cancel" }, { text: "Delete", style: "destructive", onPress: async () => { const next = saved.filter(x => x.id !== item.id); setSaved(next); await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(next)); } }])} />
+            <View style={styles.savedInfo}>
+              {renameId === item.id ? <TextInput value={renameDraft} onChangeText={setRenameDraft} placeholder="Character name" placeholderTextColor="#777B8B" style={styles.renameInput} maxLength={40} /> : <Text style={styles.savedName}>{item.name || "Unnamed Character"}</Text>}
+              <Text style={styles.savedMeta}>{item.alignment} · {item.abilities?.length || 0} abilities</Text>
+              {renameId === item.id && <View style={styles.inlineActions}><Button label="SAVE NAME" small onPress={() => commitRename(item)} /><Button label="CANCEL" small onPress={() => setRenameId(null)} /></View>}
+            </View>
+            <View style={styles.collectionActions}>
+              <Button label="EDIT" small onPress={() => loadCharacter(item)} />
+              <Button label="RENAME" small onPress={() => beginRename(item)} />
+              <Button label="COPY" small onPress={() => duplicateCharacter(item)} />
+              <Button label="DELETE" small onPress={() => Alert.alert("Delete character?", `Delete ${item.name}? This cannot be undone.`, [{ text: "Cancel", style: "cancel" }, { text: "Delete", style: "destructive", onPress: async () => { await persistCharacters(saved.filter(x => x.id !== item.id)); } }])} />
+            </View>
           </View>)}
           <Pressable onPress={newCharacter} style={styles.saveButton}><Text style={styles.saveButtonText}>CREATE NEW CHARACTER</Text></Pressable>
         </>}
@@ -351,6 +428,14 @@ const styles = StyleSheet.create({
   savedInfo: { flex: 1 },
   savedName: { color: "#F4F4FA", fontSize: 13, fontWeight: "800" },
   savedMeta: { color: "#898D9D", fontSize: 10, marginTop: 4 },
+  collectionActions: { width: 82, gap: 5 },
+  inlineActions: { gap: 4, marginTop: 5 },
+  renameInput: { backgroundColor: "#111219", color: "#FFFFFF", borderWidth: 1, borderColor: "#8178FF", borderRadius: 7, paddingHorizontal: 7, paddingVertical: 5, fontSize: 12, marginBottom: 3 },
+  showcaseStage: { backgroundColor: "#191A22", borderWidth: 1, borderColor: "#454568", borderRadius: 16, padding: 14, marginTop: 14, alignItems: "center" },
+  showcasePower: { color: "#F4F4FA", fontSize: 20, fontWeight: "900", marginBottom: 8 },
+  effectArea: { height: 150, width: "100%", backgroundColor: "#111219", borderRadius: 12, alignItems: "center", justifyContent: "center", overflow: "hidden", marginBottom: 12 },
+  effectOrb: { position: "absolute", width: 54, height: 54, borderRadius: 30 },
+  effectGlyph: { fontSize: 48 },
   footer: { alignItems: "center", paddingTop: 26, paddingBottom: 12 },
   footerText: { color: "#666A7A", fontSize: 8, fontWeight: "900", letterSpacing: 1.5 },
   footerSub: { color: "#4D5060", fontSize: 8, marginTop: 6, letterSpacing: 1 },
