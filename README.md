@@ -1,32 +1,41 @@
 # Power Forge
 
-Power Forge is a free, offline-first Android character creator for heroes, villains, antiheroes, and original powered characters.
+A free, offline-first Android creator for heroes, villains, antiheroes, and original powered characters.
 
-## Current starter features
+## What's in this package
 
-- Stylized front and back character preview
-- Hero, Villain, Antihero, and Original alignments
-- Modular part categories and starter part choices
-- Suit color palette
-- Ability selection
-- Basic finger-drawing pad for custom marks
-- Local character save/load using AsyncStorage
-- GitHub Actions workflow to compile an Android APK
+- Expo / React Native app starter
+- Front/back stylized character preview
+- Starter part categories, color palette, ability selection, local save/load, and a basic drawing pad
+- Data-driven `catalog.json` with per-part slots, abilities, and customization permissions
+- Pure JavaScript character rules with automated tests
+- GitHub Actions workflow that runs tests and Expo diagnostics before building an Android APK
+- Original app icon and adaptive icon assets
 
-## Build an APK
+## Uploading from an iPhone
 
-1. Upload the project files to the root of your `power-forge` GitHub repository, preserving the `.github/workflows/` folder.
-2. Open the **Actions** tab and enable workflows if GitHub asks.
-3. Run **Build Power Forge APK** from the Actions tab, or push a commit to `main`.
-4. When the workflow completes, open the run and download the `power-forge-apk` artifact.
-5. Extract that artifact ZIP to find `app-release.apk`.
+Upload the **contents** of this folder into the root of the `power-forge` GitHub repository. Preserve the nested paths, especially:
+- `assets/icon.png`
+- `assets/adaptive-icon.png`
+- `.github/workflows/build-apk.yml`
+- `src/characterRules.js`
+- `tests/characterRules.test.js`
 
-The workflow runs Expo's dependency alignment and project diagnostics before generating the Android project. It uses GitHub-hosted runners and open-source build tools. Public repositories have standard free GitHub Actions minutes, subject to GitHub's current limits and policies.
+The app configuration intentionally omits splash-screen configuration until the matching splash-screen package/plugin is deliberately added.
 
-## Important notes
+## Build
 
-- The first build needs an internet connection to download packages and Android build tools. The installed app's character builder and local collection are designed to work offline.
-- This starter uses original placeholder vector-style shapes for the character preview. It does not yet include a large illustrated art library.
-- The custom drawing pad currently stores freehand marks. Part-specific drawing masks, undo, brush-size controls, image export, more body types, and ability/part compatibility are planned follow-up features.
-- No paid API, account, or hosted database is required for the core app.
-- The name “Power Forge” is a working project name; app-store and trademark availability should be checked before public release.
+1. Open the repository's Actions tab.
+2. Run **Build Power Forge APK**, or push a commit to `main`.
+3. Inspect the test, Expo diagnostics, and Gradle steps.
+4. Download the `power-forge-apk` artifact after a successful run; extract it to get the APK.
+
+## Testing without an Android device
+
+Run `npm test` in a Node.js environment to test part-slot compatibility, customization permissions, granted abilities, and basic character validation. GitHub Actions runs these tests automatically.
+
+## Current limitations
+
+This is still an early prototype. The preview uses stylized UI shapes, not a large library of production character illustrations. The drawing pad is basic and isn't yet clipped to an individual body part. Ability rules and stats are only partially implemented in the UI. There is no claim of full device-tested Android readiness until a real device or emulator test is performed.
+
+No paid API, hosted database, login, or paid server is required for the core offline app. GitHub Actions usage is subject to GitHub's current plan limits.
