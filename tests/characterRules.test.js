@@ -56,3 +56,19 @@ test("valid starter character passes validation", () => {
     }
   }), []);
 });
+
+test("catalog includes both classic and silly abilities", () => {
+  const names = catalog.abilities.map((ability) => ability.name);
+  assert.ok(names.includes("Energy Blast"));
+  assert.ok(names.includes("Fart Cannon"));
+  assert.ok(names.includes("Itch Ray"));
+  assert.ok(names.includes("Duck Summoning"));
+});
+
+test("every ability has a stable id and category", () => {
+  for (const ability of catalog.abilities) {
+    assert.ok(ability.id);
+    assert.ok(ability.name);
+    assert.ok(ability.category);
+  }
+});
