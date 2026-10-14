@@ -21,7 +21,7 @@ Power Forge is a free, offline-first Android character creator for heroes, villa
 4. When the workflow completes, open the run and download the `power-forge-apk` artifact.
 5. Extract that artifact ZIP to find `app-release.apk`.
 
-The workflow uses GitHub-hosted runners and open-source build tools. Public repositories have standard free GitHub Actions minutes, subject to GitHub's current limits and policies.
+The workflow runs Expo's dependency alignment and project diagnostics before generating the Android project. It uses GitHub-hosted runners and open-source build tools. Public repositories have standard free GitHub Actions minutes, subject to GitHub's current limits and policies.
 
 ## Important notes
 
