@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "description": "Starter catalog for Power Forge. Part art and compatibility rules will expand in later versions.",
+  "categories": [
+    { "id": "head", "label": "Head", "parts": [
+      { "id": "pilot-visor", "name": "Pilot Visor", "slots": ["head"], "abilities": ["targeting"] },
+      { "id": "hero-mask", "name": "Hero Mask", "slots": ["head"], "abilities": ["identity-protection"] },
+      { "id": "open-face", "name": "Open Face", "slots": ["head"], "abilities": [] },
+      { "id": "skull-helm", "name": "Skull Helm", "slots": ["head"], "abilities": ["fear-aura"] }
+    ]},
+    { "id": "torso", "label": "Torso", "parts": [
+      { "id": "core-suit", "name": "Core Suit", "slots": ["torso"], "abilities": ["balanced-defense"] },
+      { "id": "heavy-armor", "name": "Heavy Armor", "slots": ["torso"], "abilities": ["heavy-defense"], "tradeoffs": ["reduced-agility"] },
+      { "id": "stealth-suit", "name": "Stealth Suit", "slots": ["torso"], "abilities": ["stealth"], "tradeoffs": ["lower-armor"] },
+      { "id": "tech-jacket", "name": "Tech Jacket", "slots": ["torso"], "abilities": ["gadget-bonus"] }
+    ]},
+    { "id": "arms", "label": "Arms", "parts": [
+      { "id": "power-gauntlets", "name": "Power Gauntlets", "slots": ["arms"], "abilities": ["energy-blast"] },
+      { "id": "armored-sleeves", "name": "Armored Sleeves", "slots": ["arms"], "abilities": ["block"] },
+      { "id": "energy-bracers", "name": "Energy Bracers", "slots": ["arms"], "abilities": ["energy-control"] },
+      { "id": "bare-arms", "name": "Bare Arms", "slots": ["arms"], "abilities": [] }
+    ]},
+    { "id": "legs", "label": "Legs", "parts": [
+      { "id": "speed-pants", "name": "Speed Pants", "slots": ["legs"], "abilities": ["agility"] },
+      { "id": "combat-armor", "name": "Combat Armor", "slots": ["legs"], "abilities": ["stability"] },
+      { "id": "flex-suit", "name": "Flex Suit", "slots": ["legs"], "abilities": ["flexibility"] },
+      { "id": "reinforced-legs", "name": "Reinforced Legs", "slots": ["legs"], "abilities": ["impact-resistance"] }
+    ]},
+    { "id": "boots", "label": "Boots", "parts": [
+      { "id": "thruster-boots", "name": "Thruster Boots", "slots": ["boots"], "abilities": ["flight"] },
+      { "id": "heavy-boots", "name": "Heavy Boots", "slots": ["boots"], "abilities": ["stability"] },
+      { "id": "runner-boots", "name": "Runner Boots", "slots": ["boots"], "abilities": ["speed"] },
+      { "id": "mag-boots", "name": "Mag Boots", "slots": ["boots"], "abilities": ["wall-grip"] }
+    ]},
+    { "id": "back", "label": "Back", "parts": [
+      { "id": "cape", "name": "Cape", "slots": ["back"], "abilities": ["glide"] },
+      { "id": "jet-pack", "name": "Jet Pack", "slots": ["back"], "abilities": ["flight"] },
+      { "id": "shield-rig", "name": "Shield Rig", "slots": ["back"], "abilities": ["force-field"] },
+      { "id": "no-attachment", "name": "No Attachment", "slots": ["back"], "abilities": [] }
+    ]}
+  ],
+  "abilities": [
+    "Energy Blast", "Super Strength", "Enhanced Agility", "Flight", "Force Field",
+    "Regeneration", "Invisibility", "Telepathy", "Elemental Control", "Gadget Master"
+  ]
+}
