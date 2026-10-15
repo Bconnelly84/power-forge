@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+    <defs>
+      <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8FBFF"/><stop offset=".22" stop-color="#8796B3"/><stop offset=".48" stop-color="#202B45"/><stop offset=".72" stop-color="#657895"/><stop offset="1" stop-color="#111827"/></linearGradient>
+      <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF8793"/><stop offset=".32" stop-color="#D51F3C"/><stop offset=".68" stop-color="#741328"/><stop offset="1" stop-color="#180C1A"/></linearGradient>
+      <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9DF8FF"/><stop offset=".35" stop-color="#168FEA"/><stop offset=".7" stop-color="#123A83"/><stop offset="1" stop-color="#071426"/></linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF1A8"/><stop offset=".3" stop-color="#E9A52A"/><stop offset=".65" stop-color="#9A4A12"/><stop offset="1" stop-color="#3D1E0A"/></linearGradient>
+      <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F0B6FF"/><stop offset=".35" stop-color="#9333EA"/><stop offset=".7" stop-color="#4C1D95"/><stop offset="1" stop-color="#170D2C"/></linearGradient>
+      <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8E9DB5"/><stop offset=".5" stop-color="#30394D"/><stop offset="1" stop-color="#101522"/></linearGradient>
+      <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      
+    </defs><g stroke="#111B2D" stroke-width="8" stroke-linejoin="round">
+<path d="M177 202 L130 163 L76 142 L104 210 L77 246 L139 251 L178 283Z" fill="url(#metal)"/>
+<path d="M223 202 L270 163 L324 142 L296 210 L323 246 L261 251 L222 283Z" fill="url(#metal)"/>
+<path d="M132 174 L105 164 L125 211 L151 225Z M268 174 L295 164 L275 211 L249 225Z" fill="url(#blue)"/>
+<path d="M144 228 L110 231 L146 244 M256 228 L290 231 L254 244" stroke="#7EF9FF" stroke-width="4" fill="none"/>
+<path d="M176 205 L200 189 L224 205 L220 257 L200 274 L180 257Z" fill="url(#red)"/>
+</g></svg>

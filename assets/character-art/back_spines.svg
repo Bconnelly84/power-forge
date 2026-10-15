@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+    <defs>
+      <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8FBFF"/><stop offset=".22" stop-color="#8796B3"/><stop offset=".48" stop-color="#202B45"/><stop offset=".72" stop-color="#657895"/><stop offset="1" stop-color="#111827"/></linearGradient>
+      <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF8793"/><stop offset=".32" stop-color="#D51F3C"/><stop offset=".68" stop-color="#741328"/><stop offset="1" stop-color="#180C1A"/></linearGradient>
+      <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9DF8FF"/><stop offset=".35" stop-color="#168FEA"/><stop offset=".7" stop-color="#123A83"/><stop offset="1" stop-color="#071426"/></linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF1A8"/><stop offset=".3" stop-color="#E9A52A"/><stop offset=".65" stop-color="#9A4A12"/><stop offset="1" stop-color="#3D1E0A"/></linearGradient>
+      <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F0B6FF"/><stop offset=".35" stop-color="#9333EA"/><stop offset=".7" stop-color="#4C1D95"/><stop offset="1" stop-color="#170D2C"/></linearGradient>
+      <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8E9DB5"/><stop offset=".5" stop-color="#30394D"/><stop offset="1" stop-color="#101522"/></linearGradient>
+      <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      
+    </defs><g stroke="#1A1024" stroke-width="7" stroke-linejoin="round"><path d="M176 206 L200 191 L224 206 L220 257 L200 274 L180 257Z" fill="url(#cloth)"/><path d="M180 212 L142 188 L157 219 L125 211 L151 243 L119 251 L170 263Z" fill="url(#violet)"/><path d="M220 212 L258 188 L243 219 L275 211 L249 243 L281 251 L230 263Z" fill="url(#violet)"/><path d="M154 219 L168 232 M246 219 L232 232" stroke="#F0B6FF" stroke-width="4"/></g></svg>

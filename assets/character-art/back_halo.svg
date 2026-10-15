@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+    <defs>
+      <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8FBFF"/><stop offset=".22" stop-color="#8796B3"/><stop offset=".48" stop-color="#202B45"/><stop offset=".72" stop-color="#657895"/><stop offset="1" stop-color="#111827"/></linearGradient>
+      <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF8793"/><stop offset=".32" stop-color="#D51F3C"/><stop offset=".68" stop-color="#741328"/><stop offset="1" stop-color="#180C1A"/></linearGradient>
+      <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9DF8FF"/><stop offset=".35" stop-color="#168FEA"/><stop offset=".7" stop-color="#123A83"/><stop offset="1" stop-color="#071426"/></linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF1A8"/><stop offset=".3" stop-color="#E9A52A"/><stop offset=".65" stop-color="#9A4A12"/><stop offset="1" stop-color="#3D1E0A"/></linearGradient>
+      <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F0B6FF"/><stop offset=".35" stop-color="#9333EA"/><stop offset=".7" stop-color="#4C1D95"/><stop offset="1" stop-color="#170D2C"/></linearGradient>
+      <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8E9DB5"/><stop offset=".5" stop-color="#30394D"/><stop offset="1" stop-color="#101522"/></linearGradient>
+      <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      
+    </defs><g fill="none" stroke-linecap="round">
+<ellipse cx="200" cy="190" rx="78" ry="27" transform="rotate(-18 200 190)" stroke="#F9D77B" stroke-width="11" filter="url(#glow)"/>
+<ellipse cx="200" cy="190" rx="78" ry="27" transform="rotate(-18 200 190)" stroke="#FFF5C7" stroke-width="3"/>
+<path d="M200 218 L200 283 M181 236 L200 255 L219 236" stroke="#F9D77B" stroke-width="7"/>
+</g></svg>
