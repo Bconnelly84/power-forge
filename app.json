@@ -18,13 +18,6 @@
         "backgroundColor": "#101116"
       },
       "permissions": [],
-      "edgeToEdgeEnabled": false
-    },
-    "androidNavigationBar": {
-      "backgroundColor": "#101116",
-      "barStyle": "light",
-      "enforceContrast": false,
-      "visible": "visible"
     }
   }
 }
