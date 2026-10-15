@@ -2,7 +2,7 @@
   "expo": {
     "name": "Power Forge",
     "slug": "power-forge",
-    "version": "1.0.0",
+    "version": "1.0.20",
     "orientation": "portrait",
     "userInterfaceStyle": "dark",
     "backgroundColor": "#101116",
@@ -12,12 +12,19 @@
     "icon": "./assets/icon.png",
     "android": {
       "package": "com.powerforge.creator",
-      "versionCode": 1,
+      "versionCode": 16,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#101116"
       },
-      "permissions": []
+      "permissions": [],
+      "edgeToEdgeEnabled": false
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#101116",
+      "barStyle": "light",
+      "enforceContrast": false,
+      "visible": "visible"
     }
   }
 }
