@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+    <defs>
+      <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8FBFF"/><stop offset=".22" stop-color="#8796B3"/><stop offset=".48" stop-color="#202B45"/><stop offset=".72" stop-color="#657895"/><stop offset="1" stop-color="#111827"/></linearGradient>
+      <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF8793"/><stop offset=".32" stop-color="#D51F3C"/><stop offset=".68" stop-color="#741328"/><stop offset="1" stop-color="#180C1A"/></linearGradient>
+      <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9DF8FF"/><stop offset=".35" stop-color="#168FEA"/><stop offset=".7" stop-color="#123A83"/><stop offset="1" stop-color="#071426"/></linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF1A8"/><stop offset=".3" stop-color="#E9A52A"/><stop offset=".65" stop-color="#9A4A12"/><stop offset="1" stop-color="#3D1E0A"/></linearGradient>
+      <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F0B6FF"/><stop offset=".35" stop-color="#9333EA"/><stop offset=".7" stop-color="#4C1D95"/><stop offset="1" stop-color="#170D2C"/></linearGradient>
+      <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8E9DB5"/><stop offset=".5" stop-color="#30394D"/><stop offset="1" stop-color="#101522"/></linearGradient>
+      <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      
+    </defs><g stroke="#111827" stroke-width="7" stroke-linejoin="round"><path d="M151 82 L177 46 L222 46 L250 82 L244 128 L218 158 L181 157 L155 128Z" fill="url(#cloth)"/><path d="M155 88 L184 73 L215 73 L245 89 L229 119 L204 108 L179 119Z" fill="url(#gold)"/><path d="M169 91 L190 85 L199 94 L181 104Z M211 94 L231 85 L226 104 L209 105Z" fill="#0D1422"/><path d="M181 139 L220 139 L208 151 L191 151Z" fill="#151A2A"/><path d="M170 67 L190 55 L219 55" stroke="#FFF3B5" stroke-width="3" fill="none"/></g></svg>
