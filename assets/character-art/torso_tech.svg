@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+    <defs>
+      <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F8FBFF"/><stop offset=".22" stop-color="#8796B3"/><stop offset=".48" stop-color="#202B45"/><stop offset=".72" stop-color="#657895"/><stop offset="1" stop-color="#111827"/></linearGradient>
+      <linearGradient id="red" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FF8793"/><stop offset=".32" stop-color="#D51F3C"/><stop offset=".68" stop-color="#741328"/><stop offset="1" stop-color="#180C1A"/></linearGradient>
+      <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9DF8FF"/><stop offset=".35" stop-color="#168FEA"/><stop offset=".7" stop-color="#123A83"/><stop offset="1" stop-color="#071426"/></linearGradient>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#FFF1A8"/><stop offset=".3" stop-color="#E9A52A"/><stop offset=".65" stop-color="#9A4A12"/><stop offset="1" stop-color="#3D1E0A"/></linearGradient>
+      <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F0B6FF"/><stop offset=".35" stop-color="#9333EA"/><stop offset=".7" stop-color="#4C1D95"/><stop offset="1" stop-color="#170D2C"/></linearGradient>
+      <linearGradient id="cloth" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8E9DB5"/><stop offset=".5" stop-color="#30394D"/><stop offset="1" stop-color="#101522"/></linearGradient>
+      <filter id="glow"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      
+    </defs><g stroke="#0B1426" stroke-width="8" stroke-linejoin="round">
+<path d="M164 164 L188 145 L213 145 L237 164 L267 183 L249 245 L232 307 L168 307 L151 245 L133 183Z" fill="url(#metal)"/>
+<path d="M164 171 L194 184 L185 225 L164 243 L148 194Z" fill="url(#blue)"/>
+<path d="M236 171 L207 184 L216 225 L238 243 L253 194Z" fill="url(#red)"/>
+<path d="M188 174 L211 174 L220 211 L200 237 L180 211Z" fill="#111A2B"/>
+<path d="M198 184 L210 198 L204 218 L195 218 L190 198Z" fill="#7EF9FF" filter="url(#glow)"/>
+<path d="M170 247 L230 247 L221 285 L179 285Z" fill="url(#cloth)"/>
+<path d="M180 260 L220 260 M184 273 L216 273" stroke="#E5F3FF" stroke-width="3" fill="none"/>
+<path d="M160 190 L177 201 M240 190 L224 201" stroke="#FFFFFF" stroke-width="3" fill="none" opacity=".7"/>
+</g></svg>

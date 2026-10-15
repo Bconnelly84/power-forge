@@ -1,0 +1,117 @@
+{
+  "version": "v14",
+  "new_assets_by_category": {
+    "torso": 5,
+    "arms": 5,
+    "legs": 5,
+    "boots": 5
+  },
+  "new_selectable_variants": 20,
+  "files_per_variant": [
+    ".png",
+    ".svg"
+  ],
+  "total_new_art_files": 40,
+  "assets": [
+    {
+      "category": "torso",
+      "name": "Titanium Vanguard",
+      "slug": "torso_vanguard"
+    },
+    {
+      "category": "torso",
+      "name": "Inferno Plate",
+      "slug": "torso_inferno"
+    },
+    {
+      "category": "torso",
+      "name": "Emerald Warden",
+      "slug": "torso_warden"
+    },
+    {
+      "category": "torso",
+      "name": "Arc Reactor Suit",
+      "slug": "torso_arc"
+    },
+    {
+      "category": "torso",
+      "name": "Abyssal Carapace",
+      "slug": "torso_abyss"
+    },
+    {
+      "category": "arms",
+      "name": "Shockwave Bracers",
+      "slug": "arms_shockwave"
+    },
+    {
+      "category": "arms",
+      "name": "Inferno Gauntlets",
+      "slug": "arms_inferno"
+    },
+    {
+      "category": "arms",
+      "name": "Emerald Talons",
+      "slug": "arms_talons"
+    },
+    {
+      "category": "arms",
+      "name": "Void Tendrils",
+      "slug": "arms_void"
+    },
+    {
+      "category": "arms",
+      "name": "Siege Gauntlets",
+      "slug": "arms_siege"
+    },
+    {
+      "category": "legs",
+      "name": "Vanguard Greaves",
+      "slug": "legs_vanguard"
+    },
+    {
+      "category": "legs",
+      "name": "Inferno Leg Armor",
+      "slug": "legs_inferno"
+    },
+    {
+      "category": "legs",
+      "name": "Emerald Runner Legs",
+      "slug": "legs_runner"
+    },
+    {
+      "category": "legs",
+      "name": "Void Stalker Legs",
+      "slug": "legs_stalker"
+    },
+    {
+      "category": "legs",
+      "name": "Heavy Siege Legs",
+      "slug": "legs_siege"
+    },
+    {
+      "category": "boots",
+      "name": "Stormstep Boots",
+      "slug": "boots_storm"
+    },
+    {
+      "category": "boots",
+      "name": "Inferno Thrusters",
+      "slug": "boots_inferno"
+    },
+    {
+      "category": "boots",
+      "name": "Emerald Grip Boots",
+      "slug": "boots_grip"
+    },
+    {
+      "category": "boots",
+      "name": "Void Hover Boots",
+      "slug": "boots_void"
+    },
+    {
+      "category": "boots",
+      "name": "Siegebreaker Boots",
+      "slug": "boots_siege"
+    }
+  ]
+}

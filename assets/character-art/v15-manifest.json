@@ -1,0 +1,190 @@
+{
+  "version": "v15",
+  "addedVariants": 20,
+  "categories": {
+    "back": 12,
+    "accessory": 8
+  },
+  "items": [
+    {
+      "id": "back_crimson_cape",
+      "category": "back",
+      "label": "Crimson Battle Cape",
+      "files": [
+        "back_crimson_cape.png",
+        "back_crimson_cape.svg"
+      ]
+    },
+    {
+      "id": "back_shadow_mantle",
+      "category": "back",
+      "label": "Shadow Mantle",
+      "files": [
+        "back_shadow_mantle.png",
+        "back_shadow_mantle.svg"
+      ]
+    },
+    {
+      "id": "back_royal_cloak",
+      "category": "back",
+      "label": "Royal Star Cloak",
+      "files": [
+        "back_royal_cloak.png",
+        "back_royal_cloak.svg"
+      ]
+    },
+    {
+      "id": "back_ice_cape",
+      "category": "back",
+      "label": "Glacier Cape",
+      "files": [
+        "back_ice_cape.png",
+        "back_ice_cape.svg"
+      ]
+    },
+    {
+      "id": "back_tattered_cape",
+      "category": "back",
+      "label": "Tattered Wraith Cape",
+      "files": [
+        "back_tattered_cape.png",
+        "back_tattered_cape.svg"
+      ]
+    },
+    {
+      "id": "back_raven_wings",
+      "category": "back",
+      "label": "Raven Wings",
+      "files": [
+        "back_raven_wings.png",
+        "back_raven_wings.svg"
+      ]
+    },
+    {
+      "id": "back_solar_wings",
+      "category": "back",
+      "label": "Solar Wings",
+      "files": [
+        "back_solar_wings.png",
+        "back_solar_wings.svg"
+      ]
+    },
+    {
+      "id": "back_crystal_wings",
+      "category": "back",
+      "label": "Crystal Wings",
+      "files": [
+        "back_crystal_wings.png",
+        "back_crystal_wings.svg"
+      ]
+    },
+    {
+      "id": "back_void_wings",
+      "category": "back",
+      "label": "Void Wings",
+      "files": [
+        "back_void_wings.png",
+        "back_void_wings.svg"
+      ]
+    },
+    {
+      "id": "back_dragon_wings",
+      "category": "back",
+      "label": "Dragon Wings",
+      "files": [
+        "back_dragon_wings.png",
+        "back_dragon_wings.svg"
+      ]
+    },
+    {
+      "id": "back_serpent_tail",
+      "category": "back",
+      "label": "Serpent Tail",
+      "files": [
+        "back_serpent_tail.png",
+        "back_serpent_tail.svg"
+      ]
+    },
+    {
+      "id": "back_dragon_tail",
+      "category": "back",
+      "label": "Dragon Tail",
+      "files": [
+        "back_dragon_tail.png",
+        "back_dragon_tail.svg"
+      ]
+    },
+    {
+      "id": "back_cyber_tail",
+      "category": "back",
+      "label": "Cyber Tail",
+      "files": [
+        "back_cyber_tail.png",
+        "back_cyber_tail.svg"
+      ]
+    },
+    {
+      "id": "back_spiked_tail",
+      "category": "back",
+      "label": "Spiked Tail",
+      "files": [
+        "back_spiked_tail.png",
+        "back_spiked_tail.svg"
+      ]
+    },
+    {
+      "id": "back_plasma_tail",
+      "category": "back",
+      "label": "Plasma Tail",
+      "files": [
+        "back_plasma_tail.png",
+        "back_plasma_tail.svg"
+      ]
+    },
+    {
+      "id": "accessory_onyx_horns",
+      "category": "accessory",
+      "label": "Onyx Horns",
+      "files": [
+        "accessory_onyx_horns.png",
+        "accessory_onyx_horns.svg"
+      ]
+    },
+    {
+      "id": "accessory_solar_horns",
+      "category": "accessory",
+      "label": "Solar Horns",
+      "files": [
+        "accessory_solar_horns.png",
+        "accessory_solar_horns.svg"
+      ]
+    },
+    {
+      "id": "accessory_crystal_pauldron",
+      "category": "accessory",
+      "label": "Crystal Pauldrons",
+      "files": [
+        "accessory_crystal_pauldron.png",
+        "accessory_crystal_pauldron.svg"
+      ]
+    },
+    {
+      "id": "accessory_spiked_pauldron",
+      "category": "accessory",
+      "label": "Spiked Pauldrons",
+      "files": [
+        "accessory_spiked_pauldron.png",
+        "accessory_spiked_pauldron.svg"
+      ]
+    },
+    {
+      "id": "accessory_orbit_rings",
+      "category": "accessory",
+      "label": "Orbit Rings",
+      "files": [
+        "accessory_orbit_rings.png",
+        "accessory_orbit_rings.svg"
+      ]
+    }
+  ]
+}
